@@ -12,7 +12,7 @@ console.log(cardColor);
 
 const WeatherCard = (props) => {
   return (
-    // Responsibility: To display things and change background of the card based on a variable passed to it
+    // Responsibility: To display things and change the background of the card based on a variable passed to it
     <div className="card">
       <Location />
       <img className="icon" src="" alt="Weather Icon" />
