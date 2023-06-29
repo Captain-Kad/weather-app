@@ -16,11 +16,11 @@ You may also see any lint errors in the console.
 
 ### `node -v`***
 
-Displays the node version
+Displays the node version.
 
 ### `npm install npm@latest -g`***
 
-Updates Node.js to the latest version
+Updates Node.js to the latest version.
 
 ### `npm test`
 
