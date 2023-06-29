@@ -20,7 +20,7 @@ Displays the node version
 
 ### `npm install npm@latest -g`***
 
-Updates Node.js to the latest version.
+Updates Node.js to the latest version
 
 ### `npm test`
 
