@@ -2,13 +2,25 @@ import React from "react";
 
 import Location from "./location";
 
-// changes the background color in the card for now
-var cardColor = window
-  .getComputedStyle(document.documentElement)
-  .getPropertyValue("--red");
-document.documentElement.style.setProperty("--red", "100");
+// changes the background color in the card
+// gets the root element from the css file which provides access to the variables created in the css file
+const root = document.querySelector(":root");
 
-console.log(cardColor);
+// changes temp
+let temp = 20;
+root.style.setProperty("--temp", temp);
+// alternate method below
+// document.documentElement.style.setProperty("--temp", temp);
+
+let highColor = (1 - (temp - 12) / 28) * 255;
+root.style.setProperty("--highColor", highColor);
+// alternate method below
+// document.documentElement.style.setProperty("--highColor", highColor);
+
+let lowColor = highColor - 150;
+root.style.setProperty("--lowColor", lowColor);
+// alternate method below
+// document.documentElement.style.setProperty("--lowColor", lowColor);
 
 const WeatherCard = (props) => {
   return (
