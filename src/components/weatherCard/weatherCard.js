@@ -8,7 +8,7 @@ const root = document.querySelector(":root");
 
 const WeatherCard = (props) => {
   // changes temp
-  let temp = 20;
+  let temp = props.temp;
   root.style.setProperty("--temp", temp);
 
   let highColor = (1 - (temp - 12) / 28) * 255;
