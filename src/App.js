@@ -13,7 +13,7 @@ const App = () => {
         Hello World! Welcome to my very first react app where I make a weather
         app
       </p>
-      <WeatherCard />
+      <WeatherCard temp='20'/>
     </div>
   );
 };
