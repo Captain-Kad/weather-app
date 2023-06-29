@@ -6,23 +6,17 @@ import Location from "./location";
 // gets the root element from the css file which provides access to the variables created in the css file
 const root = document.querySelector(":root");
 
-// changes temp
-let temp = 20;
-root.style.setProperty("--temp", temp);
-// alternate method below
-// document.documentElement.style.setProperty("--temp", temp);
-
-let highColor = (1 - (temp - 12) / 28) * 255;
-root.style.setProperty("--highColor", highColor);
-// alternate method below
-// document.documentElement.style.setProperty("--highColor", highColor);
-
-let lowColor = highColor - 150;
-root.style.setProperty("--lowColor", lowColor);
-// alternate method below
-// document.documentElement.style.setProperty("--lowColor", lowColor);
-
 const WeatherCard = (props) => {
+  // changes temp
+  let temp = 20;
+  root.style.setProperty("--temp", temp);
+
+  let highColor = (1 - (temp - 12) / 28) * 255;
+  root.style.setProperty("--highColor", highColor);
+
+  let lowColor = highColor - 150;
+  root.style.setProperty("--lowColor", lowColor);
+
   return (
     // Responsibility: To display things and change the background of the card based on a variable passed to it
     <div className="card">
