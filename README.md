@@ -16,7 +16,7 @@ You may also see any lint errors in the console.
 
 ### `node -v`***
 
-Displays the node version
+Displays the node version.
 
 ### `npm install npm@latest -g`***
 
