@@ -11,6 +11,10 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open <a href="https://captain-kad.github.io/weather-app/" target="_blank">this link</a> to view it in your browser
 
+### `npm run deploy`***
+
+Deploys the latest page to github. It takes a while so be patient!
+
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
