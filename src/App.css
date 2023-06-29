@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather|Fira+Sans&display=swap");
 
+/* variables */
 :root {
-  --red: 200;
+  --temp: ;
+  --highColor: ;
+  --lowColor: ;
 }
 
 .App {
@@ -15,7 +18,11 @@
 
 .card {
   margin: 0 auto;
-  background: linear-gradient(to bottom, rgba(var(--red), 200, 200), lightblue);
+  background: linear-gradient(
+    to top,
+    rgb(255, var(--highColor), 0),
+    rgb(255, var(--lowColor), 0)
+  );
   width: 200px;
   height: 240px;
   display: flex;
