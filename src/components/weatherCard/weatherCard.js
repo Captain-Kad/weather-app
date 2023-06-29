@@ -1,6 +1,7 @@
 import React from "react";
 
 import Location from "./location";
+import Icon from "./icon";
 
 // changes the background color in the card
 // gets the root element from the css file which provides access to the variables created in the css file
@@ -21,7 +22,7 @@ const WeatherCard = (props) => {
     // Responsibility: To display things and change the background of the card based on a variable passed to it
     <div className="card">
       <Location />
-      <img className="icon" src="" alt="Weather Icon" />
+      <Icon />
       <h1 className="temp">30°C</h1>
       <h3 className="condition">Sunny</h3>
     </div>
