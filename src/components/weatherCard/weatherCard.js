@@ -9,15 +9,49 @@ import WeatherCondition from "./weatherCondition";
 const root = document.querySelector(":root");
 
 const WeatherCard = (props) => {
-  // changes temp
+  //Declaration and defining of variables
   let temp = props.temp;
   root.style.setProperty("--temp", temp);
 
-  let highColor = (1 - (temp - 12) / 28) * 255;
+  let highColor = 0;
   root.style.setProperty("--highColor", highColor);
 
-  let lowColor = highColor - 150;
+  let lowColor = 0;
   root.style.setProperty("--lowColor", lowColor);
+
+  let highNum = null;
+  root.style.setProperty("--highNum", highNum);
+
+  let lowNum = null;
+  root.style.setProperty("--lowNum", lowNum);
+
+  if (props.temp > 12) {
+    //Logic for hot weather
+    highNum = 255;
+    root.style.setProperty("--highNum", highNum);
+
+    lowNum = 0;
+    root.style.setProperty("--lowNum", lowNum);
+
+    highColor = (1 - (temp - 12) / 28) * 255;
+    root.style.setProperty("--highColor", highColor);
+
+    lowColor = highColor - 150;
+    root.style.setProperty("--lowColor", lowColor);
+  } else if (props.temp <= 12) {
+    //Logic for cold weather
+    highNum = 0;
+    root.style.setProperty("--highNum", highNum);
+
+    lowNum = 255;
+    root.style.setProperty("--lowNum", lowNum);
+
+    highColor = (1 - (temp + 20) / 32) * 255;
+    root.style.setProperty("--highColor", highColor);
+
+    lowColor = highColor - 150;
+    root.style.setProperty("--lowColor", lowColor);
+  }
 
   return (
     // Responsibility: To display things and change the background of the card based on a variable passed to it
