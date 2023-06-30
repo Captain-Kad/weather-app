@@ -5,6 +5,8 @@
   --temp: ;
   --highColor: ;
   --lowColor: ;
+  --highNum: ;
+  --lowNum: ;
 }
 
 .App {
@@ -20,8 +22,8 @@
   margin: 0 auto;
   background: linear-gradient(
     to top,
-    rgb(255, var(--highColor), 0),
-    rgb(255, var(--lowColor), 0)
+    rgb(var(--highNum), var(--highColor), var(--lowNum)),
+    rgb(var(--highNum), var(--lowColor), var(--lowNum))
   );
   width: 200px;
   height: 240px;
