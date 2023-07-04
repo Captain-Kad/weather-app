@@ -1,4 +1,5 @@
 import React from "react";
+import { styled } from "@emotion/styled";
 
 import Location from "./location";
 import Icon from "./icon";
