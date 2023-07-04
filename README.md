@@ -3,7 +3,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Open <a href="https://captain-kad.github.io/weather-app/" target="_blank">this link</a> to view it in your browser
-
 ## Available Scripts
 
 In the project directory, you can run:
