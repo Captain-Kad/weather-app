@@ -7,8 +7,8 @@ import WeatherCondition from "./weatherCondition";
 
 // changes the background color in the card
 
-const WeatherCard = (props) => {
-  let temp = props.temp;
+const WeatherCard = ({ temp, condition, city, country }) => {
+  // let temp = temp;
   let highColor = 0;
   let lowColor = 0;
   let highNum = null;
@@ -49,9 +49,9 @@ const WeatherCard = (props) => {
   return (
     // Responsibility: To display things and change the background of the card based on a variable passed to it
     <Card>
-      <Location />
-      <Icon />
-      <WeatherCondition />
+      <Location city={city} country={country} />
+      <Icon condition={condition} />
+      <WeatherCondition temp={temp} condition={condition} />
     </Card>
   );
 };
