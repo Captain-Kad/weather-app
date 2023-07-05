@@ -5,6 +5,7 @@ const Location = (props) => {
   const Container = styled.div`
     text-align: center;
   `;
+
   return (
     // Responsibility: To change Location
     <Container>
