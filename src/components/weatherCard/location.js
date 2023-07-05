@@ -6,11 +6,21 @@ const Location = (props) => {
     text-align: center;
   `;
 
+  const City = styled.h1`
+    font-family: "Merriweather", sans-serif;
+    font-size: 1.6rem;
+  `;
+
+  const Country = styled.h3`
+    font-family: "Fira Sans", sans-serif;
+    font-size: 1.1rem;
+  `;
+
   return (
     // Responsibility: To change Location
     <Container>
-      <h1 className="city">Lagos</h1>
-      <h3 className="country">NG</h3>
+      <City>Lagos</City>
+      <Country>NG</Country>
     </Container>
   );
 };

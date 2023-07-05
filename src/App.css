@@ -30,16 +30,6 @@
   border-radius: 15px;
 }
 
-.city {
-  font-family: "Merriweather", sans-serif;
-  font-size: 1.6rem;
-}
-
-.country {
-  font-family: "Fira Sans", sans-serif;
-  font-size: 1.1rem;
-}
-
 .temp {
   font-family: "Fira Sans", sans-serif;
   font-size: 2rem;
