@@ -1,11 +1,14 @@
 import React from "react";
+import styled from "@emotion/styled";
 
 const Icon = (props) => {
+  const Icon = styled.img`
+    width: 40%;
+  `;
+
   return (
     // Responsibility: Displays the appropriate icon
-    <div className="icon">
-      <img className="icon" src="" alt="Weather Icon" />
-    </div>
+    <Icon className="icon" src="" alt="Weather Icon" />
   );
 };
 
