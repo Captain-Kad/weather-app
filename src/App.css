@@ -1,31 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather|Fira+Sans&display=swap");
 
-/* variables */
-:root {
-  --temp: ;
-  --highColor: ;
-  --lowColor: ;
-  --highNum: ;
-  --lowNum: ;
-}
-
 .App {
   margin: 0 auto;
   color: white;
-}
-
-.card {
-  margin: 0 auto;
-  background: linear-gradient(
-    to top,
-    rgb(var(--highNum), var(--highColor), var(--lowNum)),
-    rgb(var(--highNum), var(--lowColor), var(--lowNum))
-  );
-  width: 200px;
-  height: 240px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  border-radius: 15px;
 }
