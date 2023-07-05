@@ -13,7 +13,9 @@ const App = () => {
         Hello World! Welcome to my very first react app where I make a weather
         app
       </p>
-      <WeatherCard temp={30} />
+      <WeatherCard city="Lagos" country="NG" temp={30} condition="Dust" />
+      <WeatherCard city="London" country="CA" temp={10} condition="Clouds" />
+      <WeatherCard city="Manchester" country="UK" temp={18} condition="Clear" />
     </div>
   );
 };
