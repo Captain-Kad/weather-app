@@ -9,6 +9,7 @@ Open <a href="https://captain-kad.github.io/weather-app/" target="_blank">this l
 In the project directory, you can run:
 
 ### `npm start`***
+
 Runs the app in the development mode.\
 
 ### `npm run deploy`***
