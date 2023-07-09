@@ -6,8 +6,9 @@ import WeatherCard from "./components/weatherCard/weatherCard";
 // A functional component (This component is prefered cause its more readable)
 const App = () => {
   const data = async () => {
+    const api_key = process.env.REACT_APP_NEW_WEATHER_API_KEY;
     const apiResponse = await fetch(
-      "http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=89b273a95685d5c09e406eaee964c126"
+      `http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=${api_key}`
     );
     const resJSON = await apiResponse.json();
     return resJSON;
