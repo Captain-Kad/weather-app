@@ -16,7 +16,7 @@ const WeatherEngine = ({ location }) => {
   const getWeather = async (q) => {
     const api_key = process.env.REACT_APP_NEW_WEATHER_API_KEY;
     const apiResponse = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&APPID=${api_key}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&APPID=${api_key}`
     );
     const resJSON = await apiResponse.json(); //Weather data in JSON format
     setWeather({
