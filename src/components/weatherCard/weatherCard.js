@@ -43,6 +43,7 @@ const WeatherCard = ({ temp, condition, city, country }) => {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
     border-radius: 15px;
   `;
 
