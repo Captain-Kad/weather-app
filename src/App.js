@@ -5,8 +5,9 @@ import WeatherCard from "./components/weatherCard/weatherCard";
 
 // A functional component (This component is prefered cause its more readable)
 const App = () => {
+  const location = "Lagos, ng";
   // hooks
-  const [query, setQuery] = useState("Lagos, ng");
+  const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({
     city: null,
     country: null,
@@ -14,38 +15,29 @@ const App = () => {
     condition: null,
   });
 
-  const data = async (q) => {
+  const getWeather = async (q) => {
     const api_key = process.env.REACT_APP_NEW_WEATHER_API_KEY;
     const apiResponse = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&APPID=${api_key}`
     );
-    const resJSON = await apiResponse.json();
-    return resJSON;
+    const resJSON = await apiResponse.json(); //Weather data in JSON format
+    setWeather({
+      city: resJSON.name,
+      country: resJSON.sys.country,
+      temp: resJSON.main.temp,
+      condition: resJSON.weather[0].main,
+    });
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
-    data(query).then((res) => {
-      setWeather({
-        city: res.name,
-        country: res.sys.country,
-        temp: res.main.temp,
-        condition: res.weather[0].main,
-      });
-    });
+    getWeather(query);
   };
 
   // Preloaded values so the card isn't empty
   useEffect(() => {
-    data(query).then((res) => {
-      setWeather({
-        city: res.name,
-        country: res.sys.country,
-        temp: res.main.temp,
-        condition: res.weather[0].main,
-      });
-    });
-  });
+    getWeather(location);
+  }, [location]);
 
   return (
     <div className="App">
