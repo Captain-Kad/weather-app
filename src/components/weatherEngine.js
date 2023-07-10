@@ -6,6 +6,7 @@ const WeatherEngine = ({ location }) => {
   // hooks
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [weather, setWeather] = useState({
     city: null,
     country: null,
@@ -15,18 +16,24 @@ const WeatherEngine = ({ location }) => {
 
   //   function to get the data from the open weather api
   const getWeather = async (q) => {
+    setQuery("");
     setLoading(true);
-    const api_key = process.env.REACT_APP_NEW_WEATHER_API_KEY;
-    const apiResponse = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&APPID=${api_key}`
-    );
-    const resJSON = await apiResponse.json(); //Weather data in JSON format
-    setWeather({
-      city: resJSON.name,
-      country: resJSON.sys.country,
-      temp: resJSON.main.temp,
-      condition: resJSON.weather[0].main,
-    });
+    try {
+      const api_key = process.env.REACT_APP_NEW_WEATHER_API_KEY;
+      const apiResponse = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${q}&units=metric&APPID=${api_key}`
+      );
+      const resJSON = await apiResponse.json(); //Weather data in JSON format
+      setWeather({
+        city: resJSON.name,
+        country: resJSON.sys.country,
+        temp: resJSON.main.temp,
+        condition: resJSON.weather[0].main,
+      });
+    } catch (error) {
+      setError(true);
+    }
+
     setLoading(false);
   };
 
@@ -49,7 +56,7 @@ const WeatherEngine = ({ location }) => {
         Hello World! Welcome to my very first react app where I make a weather
         app
       </p>
-      {!loading ? (
+      {!loading && !error ? (
         <div>
           <WeatherCard
             city={weather.city}
@@ -62,9 +69,14 @@ const WeatherEngine = ({ location }) => {
             <button onClick={(e) => handleSearch(e)}>Search</button>
           </form>
         </div>
-      ) : (
+      ) : loading ? (
         <div style={{ color: "black" }}>Loading</div>
-      )}
+      ) : !loading && error ? (
+        <div style={{ color: "black" }}>
+          There is an error! <br />
+          <button onClick={() => setError(false)}>Reset!</button>{" "}
+        </div>
+      ) : null}
     </div>
   );
 };
