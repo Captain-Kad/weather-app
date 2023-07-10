@@ -4,3 +4,8 @@
   margin: 0 auto;
   color: white;
 }
+
+iframe
+{
+    display: none;
+}
