@@ -20,14 +20,14 @@ const WeatherCard = ({ temp, condition, city, country }) => {
     lowNum = 0;
 
     highColor = (1 - (temp - 12) / 28) * 255;
-    lowColor = highColor - 150;
+    lowColor = highColor - 200;
   } else if (temp <= 12) {
     //Logic for cold weather
     highNum = 0;
     lowNum = 255;
 
     highColor = (1 - (temp + 20) / 32) * 255;
-    lowColor = highColor - 150;
+    lowColor = highColor - 200;
   }
 
   const Card = styled.div`
@@ -35,7 +35,7 @@ const WeatherCard = ({ temp, condition, city, country }) => {
     background: linear-gradient(
       to top,
       rgb(${highNum}, ${highColor}, ${lowNum}),
-      rgb(${highNum}, ${lowColor}, ${lowNum})
+      rgb(${highNum}, ${Math.abs(lowColor)}, ${lowNum})
     );
     width: 200px;
     height: 240px;
