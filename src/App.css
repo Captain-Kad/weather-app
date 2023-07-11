@@ -5,6 +5,7 @@
   color: white;
 }
 
+/* removes the error overlay */
 iframe
 {
     display: none;
