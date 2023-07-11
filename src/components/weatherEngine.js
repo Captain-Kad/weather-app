@@ -63,11 +63,8 @@ const WeatherEngine = ({ location }) => {
             country={weather.country}
             temp={weather.temp}
             condition={weather.condition}
+            getWeather={getWeather}
           />
-          <form>
-            <input value={query} onChange={(e) => setQuery(e.target.value)} />
-            <button onClick={(e) => handleSearch(e)}>Search</button>
-          </form>
         </div>
       ) : loading ? (
         <div style={{ color: "black" }}>Loading</div>
