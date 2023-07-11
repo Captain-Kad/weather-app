@@ -50,12 +50,6 @@ const WeatherEngine = ({ location }) => {
 
   return (
     <div>
-      <h1 className="header">Weather App</h1>
-      <hr />
-      <p className="info">
-        Hello World! Welcome to my very first react app where I make a weather
-        app
-      </p>
       {!loading && !error ? (
         <div>
           <WeatherCard
