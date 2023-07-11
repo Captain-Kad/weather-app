@@ -50,7 +50,7 @@ const WeatherEngine = ({ location }) => {
 
   return (
     <div>
-      <h1 className="header">Welcome to My Weather App</h1>
+      <h1 className="header">Weather App</h1>
       <hr />
       <p className="info">
         Hello World! Welcome to my very first react app where I make a weather
