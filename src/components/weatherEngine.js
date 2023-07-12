@@ -37,37 +37,46 @@ const WeatherEngine = ({ location }) => {
     setLoading(false);
   };
 
-  //   function to handle search queries gotten from the user
-  const handleSearch = (e) => {
-    e.preventDefault();
-    getWeather(query);
-  };
-
   // Preloaded values so the card isn't empty
   useEffect(() => {
     getWeather(location);
   }, [location]);
 
+  if (error) {
+    return (
+      <div style={{ color: "black" }}>
+        There is an error! <br />
+        <button onClick={() => setError(false)}>Reset!</button>{" "}
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          color: "black",
+          width: "200px",
+          height: "240px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <div>
-      {!loading && !error ? (
-        <div>
-          <WeatherCard
-            city={weather.city}
-            country={weather.country}
-            temp={weather.temp}
-            condition={weather.condition}
-            getWeather={getWeather}
-          />
-        </div>
-      ) : loading ? (
-        <div style={{ color: "black" }}>Loading</div>
-      ) : !loading && error ? (
-        <div style={{ color: "black" }}>
-          There is an error! <br />
-          <button onClick={() => setError(false)}>Reset!</button>{" "}
-        </div>
-      ) : null}
+      <WeatherCard
+        city={weather.city}
+        country={weather.country}
+        temp={weather.temp}
+        condition={weather.condition}
+        getWeather={getWeather}
+      />
     </div>
   );
 };
