@@ -65,7 +65,7 @@ const Icon = (props) => {
 
   return (
     // Responsibility: Displays the appropriate icon
-    <Icon src={icon} alt="Weather Icon" />
+    <Icon src={icon} alt="Weather Icon"/>
   );
 };
 
