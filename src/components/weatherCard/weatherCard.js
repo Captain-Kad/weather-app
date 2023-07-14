@@ -45,6 +45,7 @@ const WeatherCard = ({ temp, condition, city, country, getWeather }) => {
     align-items: center;
     text-align: center;
     border-radius: 15px;
+    margin-top: 5%;
   `;
 
   return (
