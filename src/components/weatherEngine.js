@@ -4,7 +4,7 @@ import WeatherCard from "./weatherCard/weatherCard";
 
 const WeatherEngine = ({ location }) => {
   // hooks
-  const [query, setQuery] = useState("");
+  const [, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [weather, setWeather] = useState({
