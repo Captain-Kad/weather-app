@@ -3,9 +3,10 @@
 .App {
   margin: 0 auto;
   color: white;
-  display: flex;
+  display: block;
   width: 100vw;
   justify-content: center;
+  text-align: center;
 }
 
 /* removes the error overlay */
