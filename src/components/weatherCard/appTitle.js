@@ -13,9 +13,10 @@ export default AppTitle;
 
 const Header = styled.div`
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 `;
 
 const Title = styled.h1`
   font-size: 50px;
+  font-family: "Fira Sans", sans-serif;
 `;
