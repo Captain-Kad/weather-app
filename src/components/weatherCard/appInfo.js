@@ -9,6 +9,7 @@ const AppInfo = () => {
         To change the location, simply mouse over and click on the current city,
         enter your desired city then click on the search button.
       </Info>
+      <Info>Please enter the city followed by the country's two-letter country code. For example: <strong>Lagos, ng</strong> displays the weather info for the city of Lagos in the country of Nigeria</Info>
     </InfoSection>
   );
 };
